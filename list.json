@@ -1,1 +1,4 @@
-{}
+[
+    {"id": 1, "task": "Complete project"},
+    {"id": 2, "task": "Learn JavaScript"}
+]
