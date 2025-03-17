@@ -1,9 +1,12 @@
-# REQUIREMENTS
+#check for the json file is exist if not create empy json file
+import os
+import json
 
-# The application should run from the command line, accept user actions and inputs as arguments, and store the tasks in a JSON file
-# Add, Update, and Delete tasks
-# Mark a task as in progress or done
-# List all tasks
-# List all tasks that are done
-# List all tasks that are not done
-# List all tasks that are in progress
+file_name = "list.json"
+
+if not os.path.exists(file_name):
+    with open(file_name, "w") as file:
+        json.dump({},file)
+        print(f"{file_name} was created.")
+else:
+    print(f"{file_name} already exists")
