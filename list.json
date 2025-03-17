@@ -1,4 +1,16 @@
 [
-    {"id": 1, "task": "Complete project"},
-    {"id": 2, "task": "Learn JavaScript"}
+    {
+        "id": 1,
+        "task": "Complete Python project",
+        "progress": "to-do",
+        "CreatedDate": "2025-03-17 19:30:48",
+        "updatedAt": "2025-03-17 19:30:48"
+    },
+    {
+        "id": 2,
+        "task": "Learn JavaScript",
+        "progress": "to-do",
+        "CreatedDate": "2025-03-17 19:30:48",
+        "updatedAt": "2025-03-17 19:30:48"
+    }
 ]

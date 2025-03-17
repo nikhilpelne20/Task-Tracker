@@ -1,6 +1,6 @@
-#check for the json file is exist if not create empy json file
 import os
 import json
+from datetime import datetime
 
 file_name = "list.json"
 
@@ -17,5 +17,28 @@ def load_tasks():
         except json.JSONDecodeError:
             return []
 
-task = load_tasks()
-print(task)
+def save_task(tasks):
+    with open(file_name, "w") as file:
+        json.dump(tasks,file, indent= 4)
+
+
+def add_task(task):
+    tasks = load_tasks()
+
+    new_id = tasks[-1]["id"] + 1 if tasks else 1
+
+    new_task = {
+        "id": new_id,
+        "task": task,
+        "progress": "to-do",
+        "CreatedDate": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "updatedAt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    }
+
+    tasks.append(new_task)
+    save_task(tasks)
+    print(f"Task added successfully: {new_task}")
+
+
+add_task("Complete Python project")
+add_task("Learn JavaScript")
