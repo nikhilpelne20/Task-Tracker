@@ -39,6 +39,17 @@ def add_task(task):
     save_task(tasks)
     print(f"Task added successfully: {new_task}")
 
+def list_tasks():
+    tasks = load_tasks()
+    task_list = []
+    for task in tasks:
+        task_list.append(task['task'])
+    return task_list
 
-add_task("Complete Python project")
-add_task("Learn JavaScript")
+
+
+
+
+
+# add_task("Complete Python project")
+# add_task("Learn JavaScript")
