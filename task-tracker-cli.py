@@ -46,10 +46,20 @@ def list_tasks():
         task_list.append(task['task'])
     return task_list
 
-
+def update_task(task_id, updated_task):
+    tasks = load_tasks()
+    for task in tasks:
+        if task['id'] == task_id:
+            task['task'] = updated_task
+    save_task(tasks)
+    print("Task updated successfully")
 
 
 
 
 # add_task("Complete Python project")
 # add_task("Learn JavaScript")
+
+# update_task(1, "make room for me")
+update_task(1, "Make omlet for snacks")
+print(list_tasks())
