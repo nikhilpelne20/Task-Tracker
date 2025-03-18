@@ -1,16 +1,16 @@
 [
     {
         "id": 1,
-        "task": "Make omlet for snacks",
-        "progress": "to-do",
+        "task": "make bed for me",
+        "progress": "done",
         "CreatedDate": "2025-03-18 16:06:05",
-        "updatedAt": "2025-03-18 16:06:05"
+        "updatedAt": "2025-03-18 16:25:43"
     },
     {
         "id": 2,
         "task": "Learn JavaScript",
-        "progress": "to-do",
+        "progress": "done",
         "CreatedDate": "2025-03-18 16:06:05",
-        "updatedAt": "2025-03-18 16:06:05"
+        "updatedAt": "2025-03-18 16:25:43"
     }
 ]

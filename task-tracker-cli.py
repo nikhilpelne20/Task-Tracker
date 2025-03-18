@@ -30,7 +30,7 @@ def add_task(task):
     new_task = {
         "id": new_id,
         "task": task,
-        "progress": "to-do",
+        "progress": "todo",
         "CreatedDate": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "updatedAt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     }
@@ -51,15 +51,34 @@ def update_task(task_id, updated_task):
     for task in tasks:
         if task['id'] == task_id:
             task['task'] = updated_task
+            task['updatedAt'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     save_task(tasks)
     print("Task updated successfully")
 
+def mark_in_progress(task_id):
+    tasks = load_tasks()
+    for task in tasks:
+        if task['id'] == task_id:
+            task['progress'] = "in-progress"
+            task['updatedAt'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    save_task(tasks)
+    print("Task updated successfully")
 
+def mark_done(task_id):
+    tasks = load_tasks()
+    for task in tasks:
+        if task['id'] == task_id:
+            task['progress'] = "done"
+            task['updatedAt'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    save_task(tasks)
+    print("Task updated successfully")
 
 
 # add_task("Complete Python project")
 # add_task("Learn JavaScript")
 
-# update_task(1, "make room for me")
-update_task(1, "Make omlet for snacks")
+update_task(1, "make bed for me")
+# update_task(1, "Make omlet for snacks")
+# mark_in_progress(1)
+mark_done(2)
 print(list_tasks())
