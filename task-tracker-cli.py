@@ -74,11 +74,14 @@ def mark_done(task_id):
     print("Task updated successfully")
 
 
-# add_task("Complete Python project")
-# add_task("Learn JavaScript")
+def list_task_status(status):
+    tasks = load_tasks()
+    task_list = []
+    for task in tasks:
+        if task['progress'] == status:
+            task_list.append(task['task'])
+    
+    return task_list
 
-update_task(1, "make bed for me")
-# update_task(1, "Make omlet for snacks")
-# mark_in_progress(1)
-mark_done(2)
-print(list_tasks())
+
+

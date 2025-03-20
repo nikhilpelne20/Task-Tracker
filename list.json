@@ -9,8 +9,15 @@
     {
         "id": 2,
         "task": "Learn JavaScript",
-        "progress": "done",
+        "progress": "in-progress",
         "CreatedDate": "2025-03-18 16:06:05",
-        "updatedAt": "2025-03-18 16:25:43"
+        "updatedAt": "2025-03-20 15:09:07"
+    },
+    {
+        "id": 3,
+        "task": "Lister to Mind",
+        "progress": "todo",
+        "CreatedDate": "2025-03-20 15:09:51",
+        "updatedAt": "2025-03-20 15:09:51"
     }
 ]
