@@ -1,23 +1,23 @@
 [
     {
         "id": 1,
-        "task": "make bed for me",
+        "task": "Drink Electrolite power after swimming",
         "progress": "done",
         "CreatedDate": "2025-03-18 16:06:05",
-        "updatedAt": "2025-03-18 16:25:43"
+        "updatedAt": "2025-03-21 12:04:23"
     },
     {
         "id": 2,
-        "task": "Learn JavaScript",
+        "task": "Do not use social media before 12:30 PM",
         "progress": "in-progress",
         "CreatedDate": "2025-03-18 16:06:05",
-        "updatedAt": "2025-03-20 15:09:07"
+        "updatedAt": "2025-03-21 12:03:49"
     },
     {
         "id": 3,
         "task": "Lister to Mind",
-        "progress": "todo",
+        "progress": "in-progress",
         "CreatedDate": "2025-03-20 15:09:51",
-        "updatedAt": "2025-03-20 15:09:51"
+        "updatedAt": "2025-03-21 12:03:57"
     }
 ]
