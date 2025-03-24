@@ -54,7 +54,7 @@ def list_tasks():
 def update_task(task_id, updated_task):
     tasks = load_tasks()
     for task in tasks:
-        if task['id'] == task_id:
+        if task['id'] == int(task_id):
             task['task'] = updated_task
             task['updatedAt'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             save_task(tasks)
@@ -114,8 +114,38 @@ def list_task_status(status):
     for task in filtered_task:
         print(f"[{task['id']}] {task['task']}")
 
-
 def main():
+    parser = argparse.ArgumentParser(description="Simple CLI TO-DO App")
+    parser.add_argument("--add", metavar="TASK", help="Add a new task")
+    parser.add_argument("--list", action="store_true", help="List all tasks")
+    parser.add_argument("--update", metavar=("ID", "TASK"), nargs=2, help="Update a task by ID")
+    parser.add_argument("--progress", metavar="ID", type=int, help="Mark a task as in-progress")
+    parser.add_argument("--done", metavar="ID", type=int, help="Mark a task as done")
+    parser.add_argument("--todo", metavar="ID", type=int, help="Mark a task as todo")
+    parser.add_argument("--status", metavar="STATUS", help="List tasks by status (todo, in-progress, done)")
+
+    args = parser.parse_args()
+    
+    if args.add:
+        add_task(args.add)
+    elif args.list:
+        list_tasks()
+    elif args.update:
+        update_task(args.update[0], args.update[1])
+    elif args.progress:
+        mark_in_progress(args.progress)
+    elif args.done:
+        mark_done(args.done)
+    elif args.todo:
+        mark_todo(args.todo)
+    elif args.status:
+        list_task_status(args.status)
+    else:
+        parser.print_help()
+
+
+if __name__ == "__main__":
+    main()
 
 
 
